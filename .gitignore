@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+.DS_Store
+# P2: client trade files never enter the repo
+*.csv
+*.xlsx
