@@ -1,12 +1,13 @@
 ---
 import Base from "../layouts/Base.astro";
+const samplePath = `${import.meta.env.BASE_URL}sample/`;
 ---
 <Base title="Private Trade Review" description="A private review of your own trades by an open, published method. Find where they leak money. No tips, no calls.">
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top"><b>Private Trade Review</b><span>by Tracktions</span></a>
     <nav class="nav-links" aria-label="Sections">
-      <a class="hide-sm" href="/sample">Sample review</a>
+      <a class="hide-sm" href={samplePath}>Sample review</a>
       <a class="hide-sm" href="#finds">What it finds</a>
       <a class="hide-sm" href="#method">Method</a>
       <a class="hide-sm" href="#privacy">Privacy</a>
@@ -26,7 +27,7 @@ import Base from "../layouts/Base.astro";
         <div class="gate"><span>For traders with <b data-price="capital">₹25L+</b> in capital or <b>500+</b> trades, and at least <b>100</b> closed trades per strategy.</span></div>
         <div class="cta-row">
           <a class="btn" href="#pricing">Book a review</a>
-          <a class="btn ghost" href="/sample">Read a real review</a>
+          <a class="btn ghost" href={samplePath}>Read a real review</a>
         </div>
         <div class="price-note">Founding reviews <b data-price="founding">₹9,999</b> · 3 places, open until 11 Dec 2026 · free file check before you pay</div>
       </div>
@@ -95,7 +96,7 @@ import Base from "../layouts/Base.astro";
             <span>Trailing stops only, so 1R = each strategy's average loss · 1 of 5 strategies has an edge that stays positive</span>
           </div>
         </div>
-        <figcaption class="sheet-foot">A real review, published with the trader's permission. <a href="/sample">Read the full sample →</a></figcaption>
+        <figcaption class="sheet-foot">A real review, published with the trader's permission. <a href={samplePath}>Read the full sample →</a></figcaption>
       </figure>
     </div>
   </section>
@@ -245,7 +246,7 @@ import Base from "../layouts/Base.astro";
       <div class="section-head">
         <div class="eyebrow">Price</div>
         <h2>Founding reviews: three places at half price.</h2>
-        <p>The first three reviews are half the list price. In return, you give a short written testimonial and permission to publish your findings anonymised, as in the <a href="/sample">sample review</a>. Every review starts with a free file check before you pay.</p>
+        <p>The first three reviews are half the list price. In return, you give a short written testimonial and permission to publish your findings anonymised, as in the <a href={samplePath}>sample review</a>. Every review starts with a free file check before you pay.</p>
       </div>
       <div class="region" role="group" aria-label="Show price for">
         <button type="button" id="region-in" data-region="in" aria-pressed="true">India</button>
@@ -280,7 +281,7 @@ import Base from "../layouts/Base.astro";
         <h2>Before you book.</h2>
       </div>
       <div class="faq">
-        <details><summary>Can I see a real review first?</summary><p>Yes. <a href="/sample">Case 001</a> is a real review, published with the trader's permission: a profitable options record whose profit came from two days. It also shows what we leave out when the data can't support a number.</p></details>
+        <details><summary>Can I see a real review first?</summary><p>Yes. <a href={samplePath}>Case 001</a> is a real review, published with the trader's permission: a profitable options record whose profit came from two days. It also shows what we leave out when the data can't support a number.</p></details>
         <details><summary>Why at least 100 trades per strategy?</summary><p>Below about 100 trades, a winning or losing streak can look like an edge or a flaw when it's only chance. Each strategy needs its own 100, because mixing strategies hides what each one does. If you have fewer, we'll tell you before you pay.</p></details>
         <details><summary>Who is this for?</summary><p>Traders who run it like a business: <span data-price="capital">₹25L+</span> in trading capital or 500+ trades, with at least 100 closed trades in each strategy you want reviewed.</p></details>
         <details><summary>What if you don't find many leaks?</summary><p>Then that's your result. The report shows the numbers behind it: your stops held, your size stayed steady, your edge survived charges. Knowing your process holds up is worth as much as finding a leak, and it tells you when it's sensible to trade larger.</p></details>

@@ -22,6 +22,8 @@ Two static pages, ported unchanged in look and copy from the claude.ai drafts of
 - **Landing page** (`/`): what a review finds, the open method, how it works, privacy, what it isn't, the founding offer, FAQ.
 - **Sample review** (`/sample`): Case 001. Every figure was computed from the trader's own export. The raw export is **not** in this repo, and must never be committed ([P2](00-principles.md#p2-no-client-data-in-the-repo)).
 
+The site is public on GitHub Pages ([ADR-0002](decisions/0002-github-pages.md)).
+
 Prices live in one place: the `PRICES` object in `src/pages/index.astro`.
 
 ## Questions for the review
@@ -29,9 +31,8 @@ Prices live in one place: the `PRICES` object in `src/pages/index.astro`.
 1. **Payments: Razorpay Payment Links or Razorpay Checkout?** Payment Links need no server and keep the site static. Checkout needs a server route for orders and signature checks, which means an Astro server adapter and a host that runs it ([ADR-0001](decisions/0001-astro-static-site.md#revisit-when)). It decides the hosting.
 2. **International payments.** Which provider for $ cards, and the GST/FEMA handling for them. A lawyer or CA should answer the tax part.
 3. **Domain and contact email.** `hello@tracktions.com` on the page is a placeholder.
-4. **Hosting.** Undecided. Any static host serves `dist/`.
-5. **Founding offer terms.** $149 and the 11 Dec 2026 deadline were set without evidence ([A2](assumptions.md#a2)).
-6. **Legal review of the copy,** and the employment-contract check, before the site is public.
+4. **Founding offer terms.** $149 and the 11 Dec 2026 deadline were set without evidence ([A2](assumptions.md#a2)).
+5. **Legal review of the copy,** and the employment-contract check, before the site is public.
 
 ## Open items
 

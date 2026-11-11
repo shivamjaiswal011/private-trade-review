@@ -29,11 +29,18 @@ npm ci
 
 | What | Command | Result |
 |---|---|---|
-| Dev server | `npm run dev` | http://localhost:4321, reloads on save |
+| Dev server | `npm run dev` | http://localhost:4321/private-trade-review/, reloads on save |
 | Build | `npm run build` | static site in `dist/` |
 | Preview the build | `npm run preview` | serves `dist/` locally |
 
 The commands are the same on macOS, Linux and Windows.
+
+## Deploy
+
+Every push to `main` builds the site and publishes it to GitHub Pages through `.github/workflows/deploy.yml`:
+https://shivamjaiswal011.github.io/private-trade-review/
+
+The site is served under `/private-trade-review/` (`base` in `astro.config.mjs`), so links between pages use `import.meta.env.BASE_URL`, never a bare `/`. Locally the dev server is then at http://localhost:4321/private-trade-review/.
 
 ## Secrets
 

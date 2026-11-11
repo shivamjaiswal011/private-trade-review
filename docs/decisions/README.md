@@ -5,3 +5,4 @@ There is one record per decision. A decision that isn't recorded hasn't been mad
 | ADR | Decision | Status |
 |---|---|---|
 | [0001](0001-astro-static-site.md) | Astro, static output | Accepted |
+| [0002](0002-github-pages.md) | GitHub Pages from a public repo | Accepted |

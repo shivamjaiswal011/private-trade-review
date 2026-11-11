@@ -1,12 +1,23 @@
 ---
 import Base from "../layouts/Base.astro";
+const homePath = import.meta.env.BASE_URL;
 ---
 <Base title="Sample Trade Review" description="A real Private Trade Review, published with the trader's permission: a profitable options record whose profit came from two days.">
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href={homePath}><b>Private Trade Review</b><span>by Tracktions</span></a>
+    <nav class="nav-links" aria-label="Site">
+      <a class="hide-sm" href={homePath}>← Back to main page</a>
+      <a class="btn" href={`${homePath}#pricing`}>Book a review</a>
+    </nav>
+  </div>
+</header>
+
 <main class="page">
   <header class="head">
     <div class="eyebrow">Sample review · Case 001 · Index options · 185 trades · 38 trading days · Aug–Oct 2026</div>
     <h1>Up ₹2.01 lakh. Two days made it; <em>the other 36 lost money.</em></h1>
-    <p class="lede">A real review, published with the trader's written permission. Names, accounts and instruments are removed, and the five strategies are renamed A to E. Every figure is computed from the trader's own export.</p>
+    <p class="lede">A real review, published with the trader's permission. Names, accounts and instruments are removed, and the five strategies are renamed A to E. Every figure is computed from the trader's own export.</p>
     <p class="consent">Like every review, this one describes the record. It doesn't recommend any trade, strategy or position size.</p>
   </header>
 
@@ -102,7 +113,7 @@ import Base from "../layouts/Base.astro";
       <li>Planned targets rarely decided the exit. Measured in R, only Strategy B's edge stays positive across its likely range. Strategy A's R total is almost entirely its orphaned-position exits.</li>
     </ul>
     <p class="lede">Doubling the size of a record like this doubles its pattern too: the same two-day dependence, the same midday losses, the same ₹90,668 drawdown, twice as large.</p>
-    <div class="cta"><a class="btn" href="/">See how a review works</a></div>
+    <div class="cta"><a class="btn" href={homePath}>See how a review works</a></div>
   </section>
 
   <footer>Case 001 · published with the trader's permission · computed from the trader's broker-side P&amp;L export (185 closed trades, 3 Aug–8 Oct 2026). Gross ₹2,16,853, charges ₹15,712, net ₹2,01,141. This describes past trades. It isn't investment advice or research, and it doesn't indicate future results. We aren't registered with SEBI as an investment adviser or research analyst.</footer>
@@ -185,6 +196,15 @@ tr:last-child td { border-bottom: 0; }
 .summary ul { margin: 0; padding: 0; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .btn { display: inline-flex; padding: 11px 18px; border-radius: 999px; font: 500 0.8125rem/1 var(--font-body); text-decoration: none; border: 1px solid var(--ink); background: var(--ink); color: var(--canvas); }
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; backdrop-filter: blur(12px); background: color-mix(in srgb, var(--canvas) 82%, transparent); border-bottom: 1px solid var(--rule); }
+.nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px max(16px, env(safe-area-inset-right, 0px)) 14px max(16px, env(safe-area-inset-left, 0px)); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: inherit; }
+.brand b { font-weight: 600; letter-spacing: -0.01em; }
+.brand span { font: 400 0.8125rem var(--font-mono); color: var(--muted); }
+.nav-links { display: flex; gap: 22px; align-items: center; font-size: 0.8125rem; }
+.nav-links a:not(.btn) { text-decoration: none; color: var(--muted); }
+.nav-links a:not(.btn):hover { color: var(--ink); }
+@media (max-width: 560px) { .nav-links .hide-sm { display: none; } }
 footer { font: 400 11px/1.6 var(--font-mono); color: var(--muted); border-top: 1px solid var(--rule); padding-top: 20px; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 </style>
